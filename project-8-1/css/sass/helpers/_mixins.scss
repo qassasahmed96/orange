@@ -1,0 +1,54 @@
+@mixin brpnts($point) {
+    @if $point == mobile {
+        @media (max-width: 767px) {
+            @content;
+        }
+    } @else if $point == small-up {
+        @media (min-width: 767px) {
+            @content;
+        }
+    }
+    @else if $point == medium-up {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $point == large-up {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }  
+}
+@mixin circle($dimension, $bg) {
+    @content;
+    width: #{$dimension}px;
+    height: #{$dimension}px;
+    border-radius: 50%;
+    background-color: $bg;
+}
+@mixin flex-layout($justify-content, $align-items) {
+    @content;
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin abs-center() {
+    @content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin keyf($name) {
+    @keyframes #{$name} {
+        @content;
+    }   
+}
+
+@mixin auto-grid($min-width, $gap) {
+    @content;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+    gap: $gap;
+}

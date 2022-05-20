@@ -1,0 +1,16 @@
+// $hash: "#";
+// @for $i from 1 through 9 {
+//     .blue-shade-#{$i} {
+//         color: #{$hash}#{$i}#{$i}f;
+//     }
+// }
+// @for $i from 1 through 9 {
+//     .red-shade-#{$i} {
+//         color: #{$hash}f#{$i}#{$i};
+//     }
+// }
+// @for $i from 1 through 9 {
+//     .red-shade-#{$i} {
+//         color: #{$hash}#{$i}f#{$i};
+//     }
+// }
