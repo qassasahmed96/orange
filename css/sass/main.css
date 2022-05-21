@@ -7,14 +7,14 @@
 
 ::-moz-selection {
   /* change selection here */
-  background-color: #f80;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 ::selection {
   /* change selection here */
-  background-color: #f80;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 html {
@@ -46,7 +46,7 @@ a:hover {
 }
 
 .container-large {
-  padding: 0 40px;
+  padding: 0 20px;
 }
 
 .container {
@@ -102,32 +102,16 @@ input[type="checkbox"].custom-checkbox:checked::after {
   color: #000;
 }
 
-@media (min-width: 767px) {
-  .main-heading {
-    text-align: center;
-  }
-}
-
 .main-heading > h2 {
+  font-size: 3rem;
   color: #000;
-  background-color: #eee;
-  padding: 10px 20px;
-  text-align: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   margin: 0 auto;
   border-radius: 5px;
 }
 
 .main-heading > p {
-  width: 350px;
-  line-height: 1.8;
   font-size: 1.2rem;
-  margin: auto;
   position: relative;
-  padding: 10px 20px;
-  text-align: center;
   margin: 0 auto 20px;
 }
 
@@ -153,37 +137,41 @@ div.album
   gap: 40px;
 }
 
-@media (min-width: 767px) {
-  .album > .container > .wrpr {
-    margin-top: 80px;
-  }
-}
-
 .album > .container > .wrpr > .card {
   overflow: hidden;
   border-radius: 15px;
 }
 
-@media (max-width: 767px) {
-  .album > .container > .wrpr > .card {
-    width: 300px;
-    margin: auto;
-  }
+.album > .container > .wrpr > .card > .image {
+  background-image: linear-gradient(45deg, #efefef, #efefef);
+  height: 250px;
 }
 
-.album > .container > .wrpr > .card > .image {
-  background-image: linear-gradient(45deg, #efefef, #c1c1c1);
-  height: 250px;
+@media (max-width: 767px) {
+  .album > .container > .wrpr > .card > .image {
+    height: 300px;
+  }
 }
 
 .album > .container > .wrpr > .card > .txt {
   color: #000;
-  padding: 10px;
-  background-color: #eee;
+  background-color: #f8f8f8;
+}
+
+.album > .container > .wrpr > .card > .txt h3 {
+  padding: 10px 20px 0;
+  font-size: 1.2rem;
+}
+
+.album > .container > .wrpr > .card > .txt h3 + p {
+  padding: 0 20px;
+  font-size: 1.1rem;
 }
 
 .album > .container > .wrpr > .card > .txt > .info {
-  margin-top: 20px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,8 +181,21 @@ div.album
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.album > .container > .wrpr > .card > .txt > .info > i, .album > .container > .wrpr > .card > .txt > .info > svg {
+  font-size: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .album > .container > .wrpr > .card > .txt > .info > i.right,
@@ -213,12 +214,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 2;
-}
-
-@media (max-width: 767px) {
-  header {
-    position: relative;
-  }
+  -webkit-box-shadow: 0 0 5px #ddd;
+          box-shadow: 0 0 5px #ddd;
 }
 
 header .container-large > .wrpr {
@@ -333,12 +330,10 @@ header .container-large > .wrpr nav > ul.main-nav > li:not([id="mega"]) {
     height: 5px;
     background-color: #000;
     left: 0;
-    -webkit-transition: top, 
- bottom 
- 0.2s ease;
-    transition: top, 
- bottom 
- 0.2s ease;
+    -webkit-transition: top,
+ bottom 0.2s ease;
+    transition: top,
+ bottom 0.2s ease;
   }
   header .container-large > .wrpr nav > ul.main-nav > li > a:hover::after {
     bottom: 0px;
@@ -405,7 +400,7 @@ header .container-large > .wrpr nav > ul.main-nav > li > .mega-menu > .wrpr ul.l
 }
 
 header .container-large > .wrpr nav > ul.main-nav > li > .mega-menu > .wrpr ul.links > li:hover {
-  background-color: #eee;
+  background-color: #f8f8f8;
 }
 
 header .container-large > .wrpr nav > ul.main-nav > li > .mega-menu > .wrpr ul.links > li > a {
@@ -438,7 +433,7 @@ header .container-large > .wrpr > .bars {
             order: 1;
     width: 50px;
     height: 50px;
-    background-color: #eee;
+    background-color: #f8f8f8;
     border-radius: 6px;
   }
   header .container-large > .wrpr > .bars:hover ~ .pill-search {
@@ -555,7 +550,12 @@ header .container-large > .wrpr .pill-search input[type="text"] + .results {
 header .container-large > .wrpr .pill-search input[type="text"]:focus {
   outline: none;
   border: 2px solid #000;
-  width: 150px;
+}
+
+@media (min-width: 767px) {
+  header .container-large > .wrpr .pill-search input[type="text"]:focus {
+    width: 150px;
+  }
 }
 
 header .container-large > .wrpr .pill-search input[type="text"]:focus ~ .results {
@@ -565,7 +565,7 @@ header .container-large > .wrpr .pill-search input[type="text"]:focus ~ .results
   left: 0;
   width: 100%;
   border-radius: 6px;
-  border: 2px solid #ddd;
+  border: 2px solid #eee;
   overflow: hidden;
   background-color: #fff;
 }
@@ -577,11 +577,11 @@ header .container-large > .wrpr .pill-search input[type="text"]:focus ~ .results
 }
 
 header .container-large > .wrpr .pill-search input[type="text"]:focus ~ .results li:hover {
-  background-color: #eee;
+  background-color: #f8f8f8;
 }
 
 header .container-large > .wrpr .pill-search input[type="text"] .results {
-  border: 2px solid #ddd;
+  border: 2px solid #eee;
   border-radius: 6px;
   overflow: hidden;
   position: absolute;
@@ -592,7 +592,7 @@ header .container-large > .wrpr .pill-search input[type="text"] .results {
 }
 
 header .container-large > .wrpr .pill-search input[type="text"] .results > ul > li:hover {
-  background-color: #eee;
+  background-color: #f8f8f8;
   color: #333;
 }
 
@@ -629,7 +629,7 @@ header .container-large > .wrpr > .theme:hover > .menu {
   background-color: #fff;
   top: calc(100% + 20px);
   right: 0;
-  border: 2px solid #ddd;
+  border: 2px solid #eee;
   border-radius: 6px;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -653,19 +653,25 @@ header .container-large > .wrpr > .theme:hover > .menu > li > svg {
 
 header .container-large > .wrpr .user-menu:hover > .menu > li:hover,
 header .container-large > .wrpr > .theme:hover > .menu > li:hover {
-  background-color: #eee;
+  background-color: #f8f8f8;
   cursor: pointer;
 }
 
 .landing {
   padding: 0 40px;
-  background-color: #eee;
+  height: calc(100vh - 70px);
+  background-size: cover;
+  position: relative;
 }
 
 @media (min-width: 767px) {
   .landing {
     padding: 80px 0;
   }
+}
+
+.landing .container {
+  position: relative;
 }
 
 .landing .wrpr {
@@ -693,16 +699,14 @@ header .container-large > .wrpr > .theme:hover > .menu > li:hover {
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
     gap: none;
-    border-radius: 15px;
-    background-color: #eee;
   }
 }
 
 .landing .wrpr > div.txt {
   color: #000;
   text-align: center;
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
 }
 
 @media (max-width: 767px) {
@@ -717,115 +721,41 @@ header .container-large > .wrpr > .theme:hover > .menu > li:hover {
   }
 }
 
-.landing .wrpr > div.txt > h2 {
+.landing .wrpr > div.txt > h1 {
+  font-size: 4rem;
   text-transform: capitalize;
-  margin-bottom: 20px;
+  margin: 0 0 20px;
 }
 
 @media (max-width: 767px) {
-  .landing .wrpr > div.txt > h2 {
-    color: #000;
-    text-align: left;
+  .landing .wrpr > div.txt > h1 {
+    margin-top: 100px;
+    font-size: 2.8rem;
+    text-align: center;
   }
 }
 
 .landing .wrpr > div.txt > p {
   line-height: 1.8;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 @media (max-width: 767px) {
   .landing .wrpr > div.txt > p {
-    color: #000;
-    text-align: left;
-  }
-}
-
-.landing .wrpr > div.artwork {
-  display: none;
-}
-
-@media (min-width: 767px) {
-  .landing .wrpr > div.artwork {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -ms-flex-preferred-size: 30%;
-        flex-basis: 30%;
-    -webkit-column-gap: 10px;
-            column-gap: 10px;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-}
-
-.landing .wrpr > div.artwork > .drawing:first-child {
-  position: relative;
-  -webkit-transform: translatey(10px);
-          transform: translatey(10px);
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #fff;
-  -webkit-animation: scl-dwn 0.7s linear 0s infinite alternate none;
-          animation: scl-dwn 0.7s linear 0s infinite alternate none;
-}
-
-@-webkit-keyframes scl-dwn {
-  to {
-    -webkit-transform: scale(0.8) translatey(-10px);
-            transform: scale(0.8) translatey(-10px);
-  }
-}
-
-@keyframes scl-dwn {
-  to {
-    -webkit-transform: scale(0.8) translatey(-10px);
-            transform: scale(0.8) translatey(-10px);
-  }
-}
-
-.landing .wrpr > div.artwork > .drawing:last-child {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #000;
-  -webkit-animation: scl-up 0.7s linear 0s infinite alternate none;
-          animation: scl-up 0.7s linear 0s infinite alternate none;
-}
-
-@-webkit-keyframes scl-up {
-  to {
-    -webkit-transform: scale(1.2) translatey(10px);
-            transform: scale(1.2) translatey(10px);
-  }
-}
-
-@keyframes scl-up {
-  to {
-    -webkit-transform: scale(1.2) translatey(10px);
-            transform: scale(1.2) translatey(10px);
+    text-align: center;
   }
 }
 
 .landing > .container > a {
   display: block;
-  width: -moz-fit-content;
   width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 20px auto 0;
   text-align: center;
   color: #000;
   position: relative;
-  top: 2.5em;
+  top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -839,50 +769,96 @@ header .container-large > .wrpr > .theme:hover > .menu > li:hover {
 
 .landing > .container > a > svg,
 .landing > .container > a > i {
-  display: none;
+  display: block;
+  -webkit-animation: bouncing 1.5s cubic-bezier(0.05, 0.75, 0.32, 2) 0s infinite normal none;
+          animation: bouncing 1.5s cubic-bezier(0.05, 0.75, 0.32, 2) 0s infinite normal none;
+  position: relative;
 }
 
-@media (min-width: 767px) {
-  .landing > .container > a > svg,
-  .landing > .container > a > i {
-    display: block;
-    -webkit-animation: bouncing 1s linear 0s infinite alternate none;
-            animation: bouncing 1s linear 0s infinite alternate none;
-    position: relative;
+@-webkit-keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    top: 0;
   }
-  @-webkit-keyframes bouncing {
-    0%,
-    10%,
-    20%,
-    50%,
-    80%,
-    100% {
-      top: 0;
-    }
-    40%,
-    60% {
-      top: -5px;
-    }
+  40%,
+  60% {
+    top: -10px;
   }
-  @keyframes bouncing {
-    0%,
-    10%,
-    20%,
-    50%,
-    80%,
-    100% {
-      top: 0;
-    }
-    40%,
-    60% {
-      top: -5px;
-    }
+}
+
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    top: 0;
+  }
+  40%,
+  60% {
+    top: -10px;
   }
 }
 
 .landing > .container > a > svg:hover,
 .landing > .container > a > i:hover {
   cursor: pointer;
+}
+
+@media (max-width: 570px) {
+  .album .sort {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}
+
+.album .sort > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.album .sort > ul > li > a {
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 4px #ddd;
+          box-shadow: 0 0 4px #ddd;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: block;
+}
+
+.album .sort > ul > li > a.active {
+  background-color: #4a5;
+  -webkit-box-shadow: 0 0 4px #4a5;
+          box-shadow: 0 0 4px #4a5;
+  color: #fff;
+}
+
+.album .sort > ul > li > a.active:hover {
+  -webkit-box-shadow: 0 0 6px #4a5;
+          box-shadow: 0 0 6px #4a5;
+}
+
+.album .sort > ul > li > a:hover {
+  -webkit-box-shadow: 0 0 6px #ddd;
+          box-shadow: 0 0 6px #ddd;
 }
 
 .album > .container > .wrpr > .card:hover > .txt > .info > i.right,
