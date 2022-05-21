@@ -143,7 +143,7 @@ div.album
 }
 
 .album > .container > .wrpr > .card > .image {
-  background-image: linear-gradient(45deg, #efefef, #efefef);
+  background-color: #e0e0e0;
   height: 250px;
 }
 
@@ -196,6 +196,10 @@ div.album
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.album > .container > .wrpr > .card > .txt > .info > i.like:hover, .album > .container > .wrpr > .card > .txt > .info > svg.like:hover {
+  color: #e42;
 }
 
 .album > .container > .wrpr > .card > .txt > .info > i.right,
@@ -433,8 +437,7 @@ header .container-large > .wrpr > .bars {
             order: 1;
     width: 50px;
     height: 50px;
-    background-color: #f8f8f8;
-    border-radius: 6px;
+    font-size: 20px;
   }
   header .container-large > .wrpr > .bars:hover ~ .pill-search {
     display: -webkit-box;
@@ -483,7 +486,6 @@ header .container-large > .wrpr > .bars {
 header .container-large > .wrpr .pill-search {
   margin-left: 10px;
   position: relative;
-  border-radius: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -600,8 +602,7 @@ header .container-large > .wrpr .user-menu,
 header .container-large > .wrpr > .theme {
   margin: 0 10px;
   padding: 0 10px;
-  background-color: #f8f8f8;
-  border-radius: 6px;
+  font-size: 20px;
   height: 50px;
   width: 50px;
   position: relative;
@@ -625,6 +626,7 @@ header .container-large > .wrpr > .theme > .menu {
 
 header .container-large > .wrpr .user-menu:hover > .menu,
 header .container-large > .wrpr > .theme:hover > .menu {
+  font-size: 1rem;
   display: block;
   background-color: #fff;
   top: calc(100% + 20px);
@@ -755,7 +757,7 @@ header .container-large > .wrpr > .theme:hover > .menu > li:hover {
   text-align: center;
   color: #000;
   position: relative;
-  top: 40px;
+  top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -812,6 +814,7 @@ header .container-large > .wrpr > .theme:hover > .menu > li:hover {
 
 @media (max-width: 570px) {
   .album .sort {
+    padding-left: 3px;
     overflow-x: scroll;
     overflow-y: hidden;
   }
@@ -844,21 +847,11 @@ header .container-large > .wrpr > .theme:hover > .menu > li:hover {
   display: block;
 }
 
-.album .sort > ul > li > a.active {
+.album .sort > ul > li > a:focus, .album .sort > ul > li > a:active, .album .sort > ul > li > a:hover {
   background-color: #4a5;
   -webkit-box-shadow: 0 0 4px #4a5;
           box-shadow: 0 0 4px #4a5;
   color: #fff;
-}
-
-.album .sort > ul > li > a.active:hover {
-  -webkit-box-shadow: 0 0 6px #4a5;
-          box-shadow: 0 0 6px #4a5;
-}
-
-.album .sort > ul > li > a:hover {
-  -webkit-box-shadow: 0 0 6px #ddd;
-          box-shadow: 0 0 6px #ddd;
 }
 
 .album > .container > .wrpr > .card:hover > .txt > .info > i.right,
