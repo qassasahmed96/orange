@@ -731,7 +731,7 @@ header .container-large>.wrpr>.theme:hover>.menu>li:hover {
   position: relative;
 }
 
-@media (orientation: landescape) {
+@media (orientation: landscape) {
   .landing {
     height: -webkit-max-content;
     height: -moz-max-content;
