@@ -24,7 +24,7 @@ html {
 
 body {
   /* change font family here */
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 ul {
@@ -1237,7 +1237,7 @@ body {
 
 @media (max-width: 767px) {
   .join-us .wrpr .container form > input[type="email"] {
-    width: 250px;
+    width: 350px;
   }
 }
 
@@ -1247,7 +1247,7 @@ body {
 }
 
 .join-us .wrpr .container form > input[type="submit"] {
-  margin-left: -112px;
+  margin-left: -125px;
   background-color: #4a5;
   color: #fff;
   padding: 15px;
